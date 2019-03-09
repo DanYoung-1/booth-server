@@ -97,6 +97,10 @@ public func routes(_ router: Router) throws {
  When you upload the files, you should always start with adding your application slug e.g.:
  my-cool-app/my-folder/my-file.txt
  
+ GuardAuthenticationMiddleware
+ https://api.vapor.codes/auth/latest/Authentication/Classes/GuardAuthenticationMiddleware.html
+ Stateless Authentication
+ https://docs.vapor.codes/3.0/auth/api/
  
  public init(_ container: Container, defaultBucket: String, config: S3Signer.S3Signer.Config)
 
