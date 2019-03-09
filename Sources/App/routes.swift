@@ -3,8 +3,12 @@ import S3
 
 /// Register your application's routes here.
 public func routes(_ router: Router) throws {
+    router.get("/") { request in
+        return "welcome to the Root.\n"
+    }
+    
     router.get("photoStack") { request in
-        return "Welcome to the photoStack endpoint!"
+        return "Welcome to the photoStack endpoint!\n"
     }
     
     router.post("photoStack") { request in
