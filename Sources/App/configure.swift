@@ -39,7 +39,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
         accessKey: "AKIAJK6D3XPJY3W5RMZA",
         secretKey: "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",
         region: Region(name: Region.RegionName.usWest2,
-        hostName: "127.0.0.1:9000", useTLS: false))
+        hostName: "127.0.0.1:8080", useTLS: false))
     // with default bucket
     try services.register(s3: config, defaultBucket: "my-booth-bucket")
     
