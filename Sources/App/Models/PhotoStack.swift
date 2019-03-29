@@ -4,15 +4,21 @@ import FluentSQLite
 /// A single entry of a PhotoStack.
 final class PhotoStack: SQLiteModel {
     var id: Int?
-    var date: Date
-    var urls: [URL]
+    var urls: [String]
     var userID: User.ID
-    init(id: Int? = nil, date: Date, urls: [URL], userID: Int) {
+    
+    init(id: Int? = nil, urls: [String] = [], userID: Int) {
         self.id = id
-        self.date = date
         self.urls = urls
         self.userID = userID
     }
+}
+
+enum UrlState: String {
+    case uninitialized
+    case initialized
+    case active
+    case publicEnded
 }
 
 /// Allows `PhotoStack` to be used as a dynamic migration.

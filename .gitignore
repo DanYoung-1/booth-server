@@ -3,4 +3,5 @@ Packages
 xcuserdata
 *.xcodeproj
 DerivedData/
+aws-config.env
 .DS_Store
