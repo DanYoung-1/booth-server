@@ -4,7 +4,7 @@ import Foundation
 import Leaf
 
 /// Register your application's routes here.
-public func routes(_ router: Router, awsConfig: AWSConfig) throws {
+public func routes(_ router: Router) throws {
     
     let userController = UserController()
     router.get("users", use: userController.index)
