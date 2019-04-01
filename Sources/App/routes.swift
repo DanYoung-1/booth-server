@@ -13,9 +13,6 @@ public func routes(_ router: Router, awsConfig: AWSConfig) throws {
     let photoStackController = PhotoStackController()
     router.get("photoStack", use: photoStackController.index)
     router.post("photoStack", use: photoStackController.create)
-
-//    let awsController = AwsController()
-//    try awsController.boot(router: router)
     
     router.get("/") { request in
         return "welcome to the Root.\n"
