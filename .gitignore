@@ -5,3 +5,4 @@ xcuserdata
 DerivedData/
 aws-config.env
 .DS_Store
+auth.db

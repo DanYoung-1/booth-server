@@ -19,14 +19,17 @@ final class PhotoStackController {
     /// Saves a decoded `PhotoStack` to the database.
     func create(_ req: Request) throws -> Future<PhotoStack> {
         return try req.content.decode(PhotoStack.self).flatMap { photoStack in
-            let data = ["image": "https://s3-us-west-2.amazonaws.com/booth36e1d9234676048918259805cfd637ee8-dev/public/4/12B399A2-E342-4EAC-A4BD-7CC093193757.jpeg"]
+            
+            
+            
+            let data = ["image": photoStack.urls.first]
             return try req.view().render("PhotoStrip", data).flatMap { view -> EventLoopFuture<(PhotoStack)> in
                 let htmlDoc = String(decoding: view.data, as: UTF8.self)
-            
+                let user = try photoStack.user.get(on: req).wait()
                 let email = SendGridEmail(
                     personalizations: [Personalization(
                         to: [EmailAddress(email: "dsy8@icloud.com")])],
-                    from: EmailAddress(email: "dsy8@icloud.com"),
+                    from: EmailAddress(email: user.email),
                     subject: "Photostrip",
                     content: [["type": "text/html","value":htmlDoc]]
                 )
