@@ -25,11 +25,11 @@ final class PhotoStackController {
             let data = ["image": photoStack.urls.first]
             return try req.view().render("PhotoStrip", data).flatMap { view -> EventLoopFuture<(PhotoStack)> in
                 let htmlDoc = String(decoding: view.data, as: UTF8.self)
-                let user = try photoStack.user.get(on: req).wait()
+//                let user = try photoStack.user.get(on: req).wait()
                 let email = SendGridEmail(
                     personalizations: [Personalization(
                         to: [EmailAddress(email: "dsy8@icloud.com")])],
-                    from: EmailAddress(email: user.email),
+                    from: EmailAddress(email: "dsy8@icloud.com"),
                     subject: "Photostrip",
                     content: [["type": "text/html","value":htmlDoc]]
                 )
