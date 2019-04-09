@@ -35,8 +35,8 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     services.register(migrationConfig)
     
     
-    let leafProvider = LeafProvider()    // added
-    try services.register(leafProvider)  // added
+    let leafProvider = LeafProvider()
+    try services.register(leafProvider)
     config.prefer(LeafRenderer.self, for: ViewRenderer.self)
     
     // Register SendGrid Service

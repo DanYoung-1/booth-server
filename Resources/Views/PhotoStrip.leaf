@@ -10,7 +10,10 @@
             </style>
     </head>
     <html>
-        <img src="#(image)">
+    #for(image in images) {
+        <img src="#(image)"><br>
+    }
+
     </html>
     <body>
     </body>
