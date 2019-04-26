@@ -32,6 +32,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     var migrationConfig = MigrationConfig()
     migrationConfig.add(model: User.self, database: .sqlite)
     migrationConfig.add(model: PhotoStack.self, database: .sqlite)
+    migrationConfig.add(model: Video.self, database: .sqlite)
     services.register(migrationConfig)
     
     

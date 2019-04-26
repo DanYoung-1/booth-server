@@ -14,6 +14,10 @@ public func routes(_ router: Router) throws {
     router.get("photoStack", use: photoStackController.index)
     router.post("photoStack", use: photoStackController.create)
     
+    let videoController = VideoController()
+    router.get("video", use: videoController.index)
+    router.post("video", use: videoController.create)
+    
     router.get("/") { request in
         return "welcome to the Root.\n"
     }
