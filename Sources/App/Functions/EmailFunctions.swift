@@ -13,6 +13,11 @@ func sendEmail(toEmail: String, htmlDoc: String, req: Request)  throws {
                               from: EmailAddress(email: "dsy8@icloud.com"),
                               subject: "Video",
                               content: [["type": "text/html","value":htmlDoc]])
-        let sendGridClient = try req.make(SendGridClient.self)
-        _ = try sendGridClient.send([email], on: req.eventLoop)
+    let sendGridClient = try req.make(SendGridClient.self)
+    do {
+        try sendGridClient.send([email], on: req.eventLoop)
+            .whenFailure { error in print("future", error) }
+    } catch let error as SendGridError {
+        print(error)
+    }
 }
