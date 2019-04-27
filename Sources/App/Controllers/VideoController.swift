@@ -33,13 +33,7 @@ final class VideoController {
 
         _ = futureUser.and(futureHtmlDoc).map() { (arg) in
             let (user, htmlDoc) = arg
-            let email = SendGridEmail(personalizations: [Personalization(to: [EmailAddress(email: "dsy8@icloud.com")])],
-                                from: EmailAddress(email: user.email),
-                                subject: "Video",
-                                content: [["type": "text/html","value":htmlDoc]])
-
-            let sendGridClient = try req.make(SendGridClient.self)
-            _ = try sendGridClient.send([email], on: req.eventLoop)
+            try sendEmail(toEmail: user.email, htmlDoc: htmlDoc, req: req)
         }
 
         return futureVideo.save(on: req)
