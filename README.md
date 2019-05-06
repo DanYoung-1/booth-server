@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-Booth is a iOS app for iPad and iPhone with AWS S3 cloud-storage and Vapor server app that sends image and video emails using the Sendgrid service.
+Booth is a iOS app for iPad that sends image and video emails using the Sendgrid service, AWS S3 cloud-storage and a Vapor server application.
 
 - Enter an email into the Booth iOS App
 - Capture images
