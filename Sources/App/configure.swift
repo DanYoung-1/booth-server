@@ -41,7 +41,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     config.prefer(LeafRenderer.self, for: ViewRenderer.self)
     
     // Register SendGrid Service
-    let sendgridConfig = SendGridConfig(apiKey: "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")
+    let sendgridConfig = SendGridConfig(apiKey: "x")
     services.register(sendgridConfig)
     try services.register(SendGridProvider())
     let app = try Application(services: services)
