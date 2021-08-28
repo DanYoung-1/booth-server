@@ -79,8 +79,3 @@ todo: environment variables (sendgrid)
 ```
 ##### Remove backend resources amplify
 1. "amplify remove" to remove all local and cloud resources 
-
-License
-----
-
-Copyright Dan Young Enterprises
